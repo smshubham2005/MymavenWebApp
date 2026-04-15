@@ -31,7 +31,8 @@ pipeline {
         stage('Archive Artifacts') {
             steps {
                 // Instead of "Running", we save the .war file so you can download it from Jenkins
-                archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+                               sh 'cp target/MymavenWebApp01.war /opt/tomcat/webapps/'
+
             }
         }
     }
